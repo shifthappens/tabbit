@@ -19,7 +19,7 @@ body { background: black; color: #fff; }
 header { font-size: 32pt; }
 
 /* STRUCTURAL STYLES */
-#main-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+#main-container { position: absolute; overflow: auto; top: 0; bottom: 0; left: 0; right: 0; }
 header { text-align: center; }
 #tabbit { width: 900px; position: relative; margin: 0 auto; height: 100%; }
 #score-container { position: absolute; left: 0; width: 300px; }
@@ -29,12 +29,14 @@ header { text-align: center; }
 .cord { width: 5px; margin: 0 60px; height: 100%; float: left; }
 #hitarea { position: absolute; top: 50px; left: -50px; width: 600px; height: 50px; z-index: 1; }
 
-#chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
-.chord { width: 75px; height: 40px; float: left; }
+#chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: visible; }
+.chord { position: relative;  left: 68px; width: 75px; height: 40px; float: left; }
+/*
 .chord.cord-1 { position: relative; left: 24px; top: 58px; }
 .chord.cord-2 { position: relative; left: 68px; top: 189px; }
 .chord.cord-3 { position: relative; left: 114px; top: 266px; }
 .chord.cord-4 { position: relative; left: 160px; top: 478px; }
+*/
 
 /* FONT STYLES */
 .font-retro { font-family: '8bitwonder', 'Courier'; }
