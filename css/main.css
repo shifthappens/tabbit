@@ -25,7 +25,25 @@ header { text-align: center; }
 #score-container { position: absolute; left: 0; width: 300px; }
 #player-container { position: absolute; right: 0; width: 300px; text-align: right; }
 #playingfield { width: 500px; margin: 0 auto; position: relative; height: 100%; }
-#cords { height: 100%; position: absolute; top: 0; bottom: 0; border: 1px solid red; }
+#cords { height: 100%; position: absolute; top: 0; bottom: 0; width: 100%; }
+.cord { width: 5px; margin: 0 60px; height: 100%; float: left; }
+#hitarea { position: absolute; top: 50px; left: -50px; width: 600px; height: 50px; z-index: 1; }
+
+#chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
+.chord { width: 75px; height: 40px; float: left; }
+.chord.cord-1 { position: relative; left: 24px; top: 58px; }
+.chord.cord-2 { position: relative; left: 68px; top: 189px; }
+.chord.cord-3 { position: relative; left: 114px; top: 266px; }
+.chord.cord-4 { position: relative; left: 160px; top: 478px; }
 
 /* FONT STYLES */
 .font-retro { font-family: '8bitwonder', 'Courier'; }
+
+/* APPEARANCE STYLES */
+.cord { background: #FFF; }
+#hitarea { border: 5px solid green; }
+.chord { border: 2px solid; border-radius: 6px; }
+.chord.cord-1 { background-color: red; color: #fff; border-color: red; text-align: center; line-height: 40px; font-size: 20pt; }
+.chord.cord-2 { background-color: orange; color: #fff; border-color: orange; text-align: center; line-height: 40px; font-size: 20pt; }
+.chord.cord-3 { background-color: yellow; color: #000; border-color: yellow; text-align: center; line-height: 40px; font-size: 20pt; }
+.chord.cord-4 { background-color: green; color: #fff; border-color: green; text-align: center; line-height: 40px; font-size: 20pt; }
