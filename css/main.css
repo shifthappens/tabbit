@@ -30,7 +30,7 @@ header { text-align: center; }
 #hitarea { position: absolute; top: 50px; left: -50px; width: 600px; height: 50px; z-index: 1; }
 
 #chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
-.chord { width: 75px; height: 40px; float: left; }
+.chord { width: 60px; height: 60px; float: left; }
 .chord.cord-1 { position: relative; left: 24px; top: 58px; float: left; clear: both; }
 .chord.cord-2 { position: relative; left: 68px; top: 189px; }
 .chord.cord-3 { position: relative; left: 114px; top: 266px; }
@@ -42,11 +42,12 @@ header { text-align: center; }
 /* APPEARANCE STYLES */
 .cord { background: #FFF; }
 #hitarea { border: 5px solid green; }
-.chord { border: 2px solid; border-radius: 6px; font-family: "8bitwonder", 'Courier'; }
-.chord.cord-1 { background-color: red; color: #fff; border-color: red; text-align: center; line-height: 40px; font-size: 20pt; }
-.chord.cord-2 { background-color: orange; color: #fff; border-color: orange; text-align: center; line-height: 40px; font-size: 20pt; }
-.chord.cord-3 { background-color: yellow; color: #000; border-color: yellow; text-align: center; line-height: 40px; font-size: 20pt; }
-.chord.cord-4 { background-color: green; color: #fff; border-color: green; text-align: center; line-height: 40px; font-size: 20pt; }
+.chord { border-radius: 50px; font-family: "8bitwonder", 'Courier'; text-align: center; line-height: 58px; font-size: 20pt; }
+.chord.cord-1 { background-color: red; color: #fff; border-color: red; }
+.chord.cord-2 { background-color: orange; color: #fff; border-color: orange; }
+.chord.cord-3 { background-color: yellow; color: #000; border-color: yellow; }
+.chord.cord-4 { background-color: green; color: #fff; border-color: green; }
+
 #button-start { color: purple; font-size: 20pt; text-align: center; z-index: 5; margin-top: 5px; margin-bottom: 5px; cursor: pointer; }
 #button-start {
     -webkit-animation: blink 2s infinite;
