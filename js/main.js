@@ -19,7 +19,7 @@ function start_song(){
     var lines = chordData.split(/\r\n|\n/);
     
     var lastChord = lines[lines.length-1].split(";");
-    totalHeight = speed * lastChord[3];
+    totalHeight = speed * lastChord[3 ];
     //$('.cord').height(totalHeight);
 
     for (var i=0; i<lines.length; i++){    	
@@ -74,14 +74,15 @@ $(function()
 function startGame(event)
 {
 	console.log('starting game...');
-	var songDuration = 10; //in seconds
-	var speed = 1; //pixels per millisecond
-	document.getElementById('chords').style.top = '0px';
-	var interval = window.setInterval(function()
-	{
-		document.getElementById('chords').style.top = parseInt(document.getElementById('chords').style.top.split('px')[0]) - 1 + 'px';
-		//$('#chords').css({'top': '-=1px'});
-	}, 1);
+	$('#chords').addClass('startgame');
+	// var songDuration = 10; //in seconds
+	// var speed = 1; //pixels per millisecond
+	// document.getElementById('chords').style.top = '0px';
+	// var interval = window.setInterval(function()
+	// {
+	// 	document.getElementById('chords').style.top = parseInt(document.getElementById('chords').style.top.split('px')[0]) - 1 + 'px';
+	// 	//$('#chords').css({'top': '-=1px'});
+	// }, 1);
+	// window.setTimeout(function() { window.clearInterval(interval) }, (songDuration * 1000))
 
-	window.setTimeout(function() { window.clearInterval(interval) }, (songDuration * 1000))
 }
