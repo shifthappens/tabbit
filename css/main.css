@@ -21,22 +21,24 @@ header { font-size: 32pt; }
 /* STRUCTURAL STYLES */
 #main-container { position: absolute; overflow: auto; top: 0; bottom: 0; left: 0; right: 0; }
 header { text-align: center; }
-#tabbit { width: 900px; position: relative; margin: 0 auto; height: 100%; }
-#score-container { position: absolute; left: 0; width: 300px; }
-#player-container { position: absolute; right: 0; width: 300px; text-align: right; }
-#playingfield { width: 500px; margin: 0 auto; position: relative; height: 100%; }
+#tabbit { position: absolute; top: 45px; bottom: 0; left: 0; right: 0; }
+#score-container { position: absolute; left: 12.5%; }
+#player-container { position: absolute; right: 12.5%; }
+#playingfield { width: 500px; margin: 0 auto; position: relative; height: 100%; overflow-y: hidden; }
 #cords { height: 100%; position: absolute; top: 0; bottom: 0; width: 100%; }
 .cord { width: 5px; margin: 0 60px; height: 100%; float: left; }
 #hitarea { position: absolute; top: 50px; left: -50px; width: 600px; height: 50px; z-index: 1; }
 
 #chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: visible; }
 .chord { position: relative;  left: 68px; width: 75px; height: 40px; float: left; }
-/*
-.chord.cord-1 { position: relative; left: 24px; top: 58px; }
+
+#chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
+.chord { width: 75px; height: 40px; float: left; }
+.chord.cord-1 { position: relative; left: 24px; top: 58px; float: left; clear: both; }
 .chord.cord-2 { position: relative; left: 68px; top: 189px; }
 .chord.cord-3 { position: relative; left: 114px; top: 266px; }
 .chord.cord-4 { position: relative; left: 160px; top: 478px; }
-*/
+
 
 /* FONT STYLES */
 .font-retro { font-family: '8bitwonder', 'Courier'; }
@@ -49,3 +51,31 @@ header { text-align: center; }
 .chord.cord-2 { background-color: orange; color: #fff; border-color: orange; text-align: center; line-height: 40px; font-size: 20pt; }
 .chord.cord-3 { background-color: yellow; color: #000; border-color: yellow; text-align: center; line-height: 40px; font-size: 20pt; }
 .chord.cord-4 { background-color: green; color: #fff; border-color: green; text-align: center; line-height: 40px; font-size: 20pt; }
+#button-start { color: purple; font-size: 20pt; text-align: center; z-index: 5; margin-top: 5px; margin-bottom: 5px; cursor: pointer; }
+#button-start {
+    -webkit-animation: blink 2s infinite;
+    -moz-animation: blink 2s infinite;    
+    animation: blink 2s infinite;
+}
+
+@-webkit-keyframes blink{
+
+    0%{ opacity:0;}
+    50% { opacity: 1;}
+    100%{opacity:0;}
+}
+
+@-moz-keyframes blink{
+
+    0%{ opacity:0;}
+    100%{opacity:1;}
+
+}
+
+@keyframes blink{
+
+    0%{ opacity:0;}
+    50%{ opacity: 1;}
+    100%{opacity:0;}
+
+}
