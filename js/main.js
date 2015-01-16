@@ -21,7 +21,7 @@ $(document).ready(function() {
    scwidget.bind(SC.Widget.Events.READY, function(e) 
    	{ 
    		scwidget.bind(SC.Widget.Events.PLAY, function(e) { 
-   			console.log('music starts playing!'); 
+   			console.log('music starts playing!');
    			$('#chords').addClass('startgame'); //this starts the scrolling animation by adding the class to the chords div
    		})
    	})
