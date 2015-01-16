@@ -75,3 +75,13 @@ header { text-align: center; }
     100%{opacity:0;}
 
 }
+
+.startgame { 
+    -webkit-animation: moveChords 100s linear;
+}
+
+@-webkit-keyframes moveChords {
+
+    0% { top: 0px;}
+    100% { top: -10000px;}
+}
