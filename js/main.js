@@ -17,25 +17,15 @@ $(document).ready(function() {
 
   $('#button-start').on('click', startGame);
 
-   soundcloud.addEventListener('onPlayerReady', function(scPlayer, data) {
-      //scPlayer.api_play();
-      $('#button-start').show();
-   });
-  //SC.oEmbed("https://soundcloud.com/user723751824/get-lucky-daft-punk-feat", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
-  //console.log(player);
-
+   scwidget = SC.Widget(document.getElementById('musicplayer-iframe'));
+   scwidget.bind(SC.Widget.Events.READY, function(e) 
+   	{ 
+   		scwidget.bind(SC.Widget.Events.PLAY, function(e) { 
+   			console.log('music starts playing!'); 
+   			$('#chords').addClass('startgame'); //this starts the scrolling animation by adding the class to the chords div
+   		})
+   	})
 });
-
-//function onYouTubeIframeAPIReady() {
-//  player = new YT.Player('player', {
-//    height: '250',
-//    width: '500',
-//    videoId: 'bBJ9RnbK8G4',
-//    events: {
-//      'onReady': onPlayerReady
-//    }
-//  });
-//}
 
 function onPlayerReady(event) {
   $("#button-start").show();
@@ -70,7 +60,7 @@ function start_song(){
 
 function draw_chord(chordTime, chordNotation, index){
   
-  var topPosition =(speed * chordTime) + 110;
+  var topPosition =(speed * chordTime) + 90;
 
   $('#chords').append("<div class='chord' id='chord_" + index + "' data-timing='"+chordTime+"' data-key='"+chordNotation+"' style='top: " + topPosition + "px'>" + 
     chordNotation.substring(0,1) + "</div>");
@@ -78,17 +68,9 @@ function draw_chord(chordTime, chordNotation, index){
 
 function startGame(event)
 {
-  //player.playVideo();am
-  //player.play();r(
-  //widget.play();
+  console.log('starting game...');  
   setupTimersForGame();
-  var player = soundcloud.getPlayer('sc-player');
-  player.api_play();
-  
-	console.log('starting game...');
-  //setTimeout("$('#chords').addClass('startgame')", 1000);
-	$('#chords').addClass('startgame');
-  
+  scwidget.play();
 }
 
 function updateScore(points)
