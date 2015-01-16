@@ -2,8 +2,10 @@
 var chordData = null;
 var matchTime = false;
 
-var speed = 1000;
+var speed = 100;
 var totalHeight = null;
+
+var player;
 
 $(document).ready(function() {
 
@@ -12,14 +14,23 @@ $(document).ready(function() {
 		  chordData  = data;
       start_song();
    	});
+
 });
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '250',
+    width: '500',
+    videoId: 'bBJ9RnbK8G4',
+  });
+}
 
 function start_song(){
 	  
     var lines = chordData.split(/\r\n|\n/);
     
     var lastChord = lines[lines.length-1].split(";");
-    totalHeight = speed * lastChord[3 ];
+    //totalHeight = speed * lastChord[3 ];
     //$('.cord').height(totalHeight);
 
     for (var i=0; i<lines.length; i++){    	
@@ -41,48 +52,16 @@ function start_song(){
 
 function draw_chord(chordTime, chordNotation){
   
-  var topPosition = totalHeight - speed * chordTime;
+  var topPosition = speed * chordTime + 55;
 
   $('#chords').append("<div class='chord' style='top: " + topPosition + "px'>" + 
     chordNotation.substring(0,1) + "</div>");
 }
 
-$(function()
-	{
-		console.log('test');
-		$('#button-start').on('click', startGame);
-
-		//populate the game
-		var i = 0;
-		var j = 1;
-		for(i = 0; i < 10; i++)
-		{
-			var oldChord = $('.chord.cord-'+j).last();
-			var newChord = oldChord.clone();
-			newChord.css({top: (parseInt(oldChord.css('top').split('px')[0]) + 1000 + 'px') });
-			$('#chords').append(newChord);
-
-			console.log(oldChord.css('top'), newChord);
-
-			j++;
-
-			if(j > 4)
-				j = 1;
-		}
-});
-
 function startGame(event)
 {
 	console.log('starting game...');
 	$('#chords').addClass('startgame');
-	// var songDuration = 10; //in seconds
-	// var speed = 1; //pixels per millisecond
-	// document.getElementById('chords').style.top = '0px';
-	// var interval = window.setInterval(function()
-	// {
-	// 	document.getElementById('chords').style.top = parseInt(document.getElementById('chords').style.top.split('px')[0]) - 1 + 'px';
-	// 	//$('#chords').css({'top': '-=1px'});
-	// }, 1);
-	// window.setTimeout(function() { window.clearInterval(interval) }, (songDuration * 1000))
 
+  player.playVideo();
 }

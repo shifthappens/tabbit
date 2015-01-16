@@ -18,9 +18,12 @@
         <![endif]-->
 
         <div id="main-container">
+
             <button id="start-button" onclick="start_song();" style="display:none;"/>START SONG</button>
 	        <header class="font-retro">Tabbit</header>
+
             <div id="tabbit">
+
     	        <div id="score-container">
                     <span id="score-label" class="font-retro">SCORE:</span>
     	        	<span id="score" class="font-retro">0000</span>
@@ -28,9 +31,10 @@
     	        <div id="player-container">
     	        	<span id="player-name" class="font-retro">PLAYER 1</span>
                 </div>
-    	        <div id="musicplayer">
-
-    	        </div>
+                <div id="musicplayer">
+                    <div id="player"></div>
+                </div>
+    	        
                 <div id="button-start" class="btn font-retro"> &lt; START &gt; </div>
     	        <div id="playingfield">
                     <div id="hitarea"></div>
@@ -41,21 +45,18 @@
     	        		<div class="cord" id="cord-4"></div>
     	        	</div>
                     <div id="chords">
-                        <div class="chord cord-1">Fa</div>
-                        <div class="chord cord-2">C</div>
-                        <div class="chord cord-3">Sim</div>
-                        <div class="chord cord-4">B#</div>
                     </div>
     	        </div>
             </div>
 
         <button id="start-button" onclick="start_song();" style="display:none;"/>START SONG</button>
         <input id="user-key" style="display:none;" />
-
+        <script src="https://www.youtube.com/player_api"></script>
         <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-2.1.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/events.js"></script>
+        <script src="https://www.youtube.com/player_api"></script> 
         <script src="js/main.js"></script>
     </body>
 </html>
