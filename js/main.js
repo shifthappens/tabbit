@@ -70,7 +70,7 @@ function start_song(){
 
 function draw_chord(chordTime, chordNotation, index){
   
-  var topPosition =(speed * chordTime) + 55;
+  var topPosition =(speed * chordTime) + 110;
 
   $('#chords').append("<div class='chord' id='chord_" + index + "' data-timing='"+chordTime+"' data-key='"+chordNotation+"' style='top: " + topPosition + "px'>" + 
     chordNotation.substring(0,1) + "</div>");
@@ -89,4 +89,16 @@ function startGame(event)
   //setTimeout("$('#chords').addClass('startgame')", 1000);
 	$('#chords').addClass('startgame');
   
+}
+
+function updateScore(points)
+{
+	baseScore = "0000";
+	currScore = parseInt($('#score').text());
+	newScore = currScore + points;
+	newScore = newScore.toString();
+	numOfZeroes = 4 - newScore.length;
+	numOfZeroes.toString();
+	console.log(currScore, newScore, numOfZeroes);
+	$('#score').text(baseScore.substr(0, numOfZeroes) + newScore);
 }

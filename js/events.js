@@ -26,9 +26,11 @@ function match_event(elemId, userChord, tabChord){
 	if(userChord.toLowerCase() == tabChord.substring(0,1).toLowerCase()){
 		$("#" + elemId).addClass('exploded');
 		console.log("CHORD " + userChord + " MATCH!")
+		updateScore(50);
 	}
 	else{
 		console.log("CHORDS " + userChord + " AND " + tabChord + " DON'T MATCH!")
+		updateScore(-50);
 	}
 }
 

@@ -30,14 +30,14 @@ header { text-align: center; }
 #hitarea { position: absolute; top: 50px; left: -50px; width: 600px; height: 50px; z-index: 1; }
 
 #chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
-.chord { width: 60px; height: 60px; float: left;  position: absolute; left: 68px; clear: both; }
+.chord { width: 40px; height: 40px; float: left;  position: absolute; left: 68px; clear: both; }
 /*.chord.cord-1 { position: relative; left: 24px; top: 58px; float: left; clear: both; }
 *//*.chord.cord-2 { position: relative; left: 68px; top: 189px; }
 .chord.cord-3 { position: relative; left: 114px; top: 266px; }
 .chord.cord-4 { position: relative; left: 160px; top: 478px; }
 */
 
-#musicplayer { width: 500px; margin: 0 auto; position: relative;}
+#musicplayer { width: 500px; margin: 0 auto; position: relative; }
 
 /* FONT STYLES */
 .font-retro { font-family: '8bitwonder', 'Courier'; }
@@ -52,7 +52,7 @@ header { text-align: center; }
 .chord.cord-4 { background-color: green; color: #fff; border-color: green; }
 
 .chord { border-radius: 60px; background-color: red; color: #fff; 
-	border-color: red; text-align: center; line-height: 50px; font-size: 20pt;}
+	border-color: red; text-align: center; line-height: 40px; font-size: 12pt;}
 
 #button-start { color: purple; font-size: 20pt; text-align: center; z-index: 5; margin-top: 5px; margin-bottom: 5px; cursor: pointer; }
 #button-start {
