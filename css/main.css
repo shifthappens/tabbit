@@ -31,11 +31,6 @@ header { text-align: center; }
 
 #chords { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
 .chord { width: 40px; height: 40px; float: left;  position: absolute; left: 42px; clear: both; }
-/*.chord.cord-1 { position: relative; left: 24px; top: 58px; float: left; clear: both; }
-*//*.chord.cord-2 { position: relative; left: 68px; top: 189px; }
-.chord.cord-3 { position: relative; left: 114px; top: 266px; }
-.chord.cord-4 { position: relative; left: 160px; top: 478px; }
-*/
 
 #musicplayer { width: 400px; margin: 0 auto; position: relative; height: 150px; }
 
