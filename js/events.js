@@ -13,8 +13,8 @@ function setupTimersForGame()
 
 	  setTimeout("$(document).off('keypress')", ($(chord).data('timing')*1000) + 200 + 500);
 
-	  //if(!--totalNumChords)
-	  	//$(document).trigger('timersready');
+	  if(!--totalNumChords)
+	  	$(document).trigger('timersready');
 
   });
 
