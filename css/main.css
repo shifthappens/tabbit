@@ -85,6 +85,7 @@ header { text-align: center; }
 
 .startgame { 
     -webkit-animation: moveChords 283s linear;
+    -moz-animation: moveChords 283s linear;
 }
 
 @-webkit-keyframes moveChords {
@@ -92,6 +93,12 @@ header { text-align: center; }
     0% { top: 0px;}
     100% { top: -28300px;}
 }
+
+@keyframes moveChords {
+	0% { top: 0px;}
+    100% { top: -28300px;}
+}
+
 
 .exploded {
 	-webkit-animation: explodeChord 0.75s ease-out;
