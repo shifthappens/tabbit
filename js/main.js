@@ -17,14 +17,14 @@ $(document).ready(function() {
 
   $('#button-start').on('click', startGame);
 
-  scwidget = SC.Widget(document.getElementById('musicplayer-iframe'));
-   scwidget.bind(SC.Widget.Events.READY, function(e) 
-   	{ 
-   		scwidget.bind(SC.Widget.Events.PLAY, function(e) { 
-   			console.log('music starts playing!');
-   			$('#chords').addClass('startgame'); //this starts the scrolling animation by adding the class to the chords div
-   		})
-   	})
+   soundcloud.addEventListener('onPlayerReady', function(scPlayer, data) {
+      $('#button-start').show();
+   });
+
+   soundcloud.addEventListener('onMediaPlay', function(scPlayer, data) {
+      console.log("player started!!!");
+      $('#chords').addClass('startgame');
+   });
 });
 
 function onPlayerReady(event) {
@@ -51,7 +51,7 @@ function start_song(){
 
 function draw_chord(chordTime, chordNotation, index){
   
-  var topPosition =(speed * chordTime) + 90;
+  var topPosition =(speed * chordTime) + 110;
 
   $('#chords').append("<div class='chord' id='chord_" + index + "' data-timing='"+chordTime+"' data-key='"+chordNotation+"' style='top: " + topPosition + "px'>" + 
     chordNotation.substring(0,1) + "</div>");
@@ -59,9 +59,11 @@ function draw_chord(chordTime, chordNotation, index){
 
 function startGame(event)
 {
-  console.log('starting game...');  
   setupTimersForGame();
-  scwidget.play();
+  var player = soundcloud.getPlayer('sc-player');
+  player.api_play();
+  
+	console.log('starting game...');
 }
 
 function updateScore(points)
